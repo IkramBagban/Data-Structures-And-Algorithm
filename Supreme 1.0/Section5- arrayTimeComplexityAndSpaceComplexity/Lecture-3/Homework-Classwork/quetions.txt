@@ -1,0 +1,23 @@
+Q1 -  Merge two arrays/vectors. If a number occurs in both arrays, write it only once in the output.
+Input: arr1 = {1,2,3,4,5,6}, arr2 = {4,5,8,9}
+Output: ans = {1,2,3,4,5,6,8,9} // Duplicates are not added twice.
+
+
+Q2 - Question: Find the first quadruplet of distinct numbers in an array/vector that add up to a given target value.
+Note: The quadruplet should consist of numbers with different indexes in the array.
+Input: arr = {1, 2, 3, 4, 5, 6, 8}, target = 12
+Output: Quadruplet found: {1, 2,3,6}
+
+Q3 - Problem: Left rotate a vector by one position.
+Input: arr = {1, 2, 3, 4, 5}
+Output = {2, 3, 4, 5 ,1}
+
+Q4 - 
+leet code - https://leetcode.com/problems/majority-element/description/
+
+Question:
+Find the majority element in an array. A majority element appears more than ⌊n/2⌋ times, where n is the size of the array. If no majority element exists, return -1.
+
+Input: nums = {3, 2, 3, 2, 2, 2, 6}
+Output: 2
+Explanation: In the given array, the element 2 appears 4 times out of 7, which is more than ⌊7/2⌋ = 3.
