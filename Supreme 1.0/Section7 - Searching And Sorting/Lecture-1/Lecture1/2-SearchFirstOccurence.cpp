@@ -10,6 +10,8 @@ using namespace std;
 // to find the first occurrence. Binary Search has a time complexity of O(log n), which makes it efficient 
 // for searching in large datasets.
 
+// Q - Find the first occurrence of the given target in the array/vector.
+
 // Function to find the first occurrence of a target in a sorted vector using binary search
 int firstOccurrence(vector<int> v, int target)
 {

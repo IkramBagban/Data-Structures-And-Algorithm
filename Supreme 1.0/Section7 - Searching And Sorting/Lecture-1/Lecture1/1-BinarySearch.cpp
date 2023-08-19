@@ -93,8 +93,10 @@ int main()
 
     system("color 0A");
 
-
     // -----
+    // Example usage of binary_search in a sorted array
+    // Using the binary_search function with an array:
+    // The binary_search function can be used with an array by providing the beginning and end iterators of the array, along with the target value.
     int arr2[8] = {1, 2, 3, 4, 5, 6, 7, 8};
     // Example usage of binary_search in a sorted array
     int arr2target = 6;
