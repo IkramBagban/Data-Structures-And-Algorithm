@@ -2,6 +2,10 @@
     "files.associations": {
         "typeinfo": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "*.tcc": "cpp"
     }
 }
