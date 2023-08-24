@@ -1,0 +1,18 @@
+
+FlowcharQuestions : 
+1 - print some of a & b flowchart
+2 - avg of a,b,c
+3 - print twice of a
+4- area of a square , formula = side*side
+5- calculat overall percentage
+6- check num is even or odd
+7- check +ve, -ve or 0
+8 - student && grade flow chart
+9- printing count from 1 to N (looping)
+10 - multiply N numbers from user
+11 - print 1 to N, but only even numbers
+
+HW : what is 
+1 - low level langugae
+2 - high leel language
+3 - mid level language
