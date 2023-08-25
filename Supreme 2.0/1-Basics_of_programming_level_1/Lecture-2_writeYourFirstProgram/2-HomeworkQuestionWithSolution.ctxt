@@ -1,0 +1,21 @@
+1) What is "return 0": 
+return 0 is used in C++ to indicate that the program has executed successfully and without errors. It's typically placed at the end of the main function. However, in modern C++, you don't always need to explicitly use return 0, as the compiler assumes a successful exit if you don't provide a return statement.
+
+2) What happens when we write "cout << "BABBAR";" after ";"?:
+Writing cout << "BABBAR"; after a semicolon will not have any immediate effect. It's a valid C++ statement that prints "BABBAR" to the console using the cout stream. However, if it's not within a code block (like a function or a loop), it might be treated as a standalone statement.
+
+3) Mapping of -125 and -100 in two’s complement representation: 
+The correct mapping involves converting the negative numbers to their binary representation and then applying two's complement. For -125, the two's complement representation is 10000001, which is 129. For -100, it's 10011100, which is 156.
+
+4) Explore Typecasting: 
+Typecasting is a way of converting one data type into another. For example, converting an integer into a float. It's used to ensure compatibility and proper calculations between different data types.
+
+5) Explore Number System: Binary to Decimal: 
+To convert binary to decimal, you multiply each binary digit by 2 raised to its position and then sum up the results. For example, binary 1011 is (1 * 2^3) + (0 * 2^2) + (1 * 2^1) + (1 * 2^0) = 8 + 0 + 2 + 1 = 11 in decimal.
+
+6) Check Range of Signed and Unsigned Char: 
+The range of a signed char is from -128 to 127. This is because a signed char uses one bit for sign and 7 bits for magnitude. The range of an unsigned char is 0 to 255, as it only represents positive values.
+
+7) 32-Bit vs 64-Bit Architecture: 
+The primary difference between 32-bit and 64-bit architectures is their memory addressing capacity. A 32-bit system can address up to 4GB of RAM, while a 64-bit system can handle much more. This enables 64-bit systems to work with larger datasets and perform more complex calculations efficiently.
+

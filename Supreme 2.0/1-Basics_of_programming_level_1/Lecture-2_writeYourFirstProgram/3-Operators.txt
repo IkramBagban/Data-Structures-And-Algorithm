@@ -1,0 +1,33 @@
+
+Operators : Operators are symbols in programming that perform actions on values. Here are the types of operators with simple explanations and examples:
+
+
+Arithmetic Operators: These perform math operations.
++ : Addition (e.g., 5 + 3 = 8)
+- : Subtraction (e.g., 7 - 2 = 5)
+* : Multiplication (e.g., 4 * 6 = 24)
+/ : Division (e.g., 10 / 2 = 5)
+% : Modulus (e.g., 9 % 4 = 1)
+
+
+Relational Operators: These compare values.
+== : Equal to (e.g., 5 == 5 is true)
+!= : Not equal to (e.g., 3 != 7 is true)
+<  : Less than (e.g., 2 < 8 is true)
+>  : Greater than (e.g., 9 > 6 is true)
+<= : Less than or equal (e.g., 4 <= 4 is true)
+>= : Greater than or equal (e.g., 7 >= 3 is true)
+
+
+Assignment Operators: These assign values.
+=  : Assign (e.g., x = 10 assigns 10 to x)
++= : Add and assign (e.g., y += 5 adds 5 to y)
+-= : Subtract and assign (e.g., z -= 3 subtracts 3 from z)
+*= : Multiply and assign (e.g., w *= 2 multiplies w by 2)
+/= : Divide and assign (e.g., q /= 4 divides q by 4)
+
+
+Logical Operators: These work with conditions.
+&& : Logical AND (e.g., true && false is false)
+|| : Logical OR (e.g., true || false is true)
+!  : Logical NOT (e.g., !true is false)
