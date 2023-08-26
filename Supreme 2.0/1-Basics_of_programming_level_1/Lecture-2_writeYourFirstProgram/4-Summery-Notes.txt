@@ -1,0 +1,134 @@
+- Programming Language:
+Imagine you want to tell a robot to make a sandwich. But the robot doesn't understand English. Programming languages are like special languages we use to give instructions to computers (or robots). Without them, we can't tell computers what to do.
+
+
+- Compilation Process:
+You've written a letter (your code) in English, but the computer only understands a secret language. The compilation process is like a translator that turns your English letter into the secret language so the computer can read it.
+
+
+
+- Where to Code - VS Code, Sublime, etc.:
+Think of coding like writing a story. You need a special notebook to write it. VS Code, Sublime, and others are like those special notebooks where you write your computer stories (code).
+
+
+- Let's Write Down the 1st Code:
+Let's start with a simple greeting! In many programming languages, the first code people learn is to make the computer say "Hello, World!".
+        print("Hello, World!")
+If you run this code, the computer will greet you with "Hello, World!".
+Remember, coding is like teaching computers to do tasks. The more you practice, the better you get at giving instructions!
+
+
+
+- Variable:
+In C++, a variable is like a locker in school. You can store different things inside, like books, pens, or lunch. When you want to use them later, you just open the locker and take them out. Similarly, in C++, you store data inside a variable and use it when needed.
+
+- Naming Convention:
+When you play video games, you might give your character a cool name, right? In C++, when you name your variables, you should give them clear and descriptive names so you know what they're for. For example, if you're storing your age, you might name the variable myAge instead of just a.
+
+- Some rules for naming in C++:
+Names can't have spaces. So, my Age is wrong, but myAge is correct.
+They should start with a letter or an underscore (_), not a number. So, 1name is wrong, but name1 is correct.
+Try to avoid using confusing names. If you're storing scores, playerScore is better than just ps.
+Remember, good naming helps you and others understand your code better!
+
+
+
+- Data Types:
+In C++, data types specify the type of data a variable can hold. Here are some common ones:
+   
+1) int: Stands for "integer". Used to store whole numbers.
+Example: int age = 20;
+
+2) float: Used to store decimal numbers.
+Example: float weight = 65.5;
+
+3) double: Similar to float but can store larger decimal numbers.
+Example: double distance = 103.4567;
+
+4) char: Stands for "character". Used to store a single character.
+Example: char grade = 'A';
+
+5) bool: Stands for "boolean". Used to store either true or false.
+Example: bool isRaining = false;
+
+6) string: Used to store a sequence of characters or words.
+Example: string name = "John";
+
+Each data type has a specific purpose and ensures that the variable holds the right kind of information.
+
+
+
+- Bit and Byte:
+1) Bit: The smallest unit of data in a computer. It can be either 0 or 1.
+2) Byte: A group of 8 bits. It's the standard unit used to represent data in computers.
+To visualize, think of a bit as a single coin (either heads or tails) and a byte as a stack of 8 coins.
+
+
+
+
+
+
+
+Number System - Decimal and Binary:
+1) Decimal (Base 10): This is the standard system for denoting integers and non-integer numbers. It's called "base 10" because it's based on 10 symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+
+Example: The number "237" in decimal means:
+2×10^2 + 3×10^1 + 7×10^0 = 200 + 30 + 7 = 237.
+
+2) Binary (Base 2): Used internally by almost all modern computers and computer-based devices because it's straightforward to implement with digital electronic circuitry. It uses only two symbols: 0 and 1.
+
+Example: The binary number "1011" means:
+1×2^3 + 0×2^2 + 1×2^1 + 1×2^0=8 + 0 + 2 + 1 = 11 in decimal.
+
+So, "1011" in binary is equivalent to "11" in the decimal system.
+
+
+
+- 1's Complement and 2's Complement:
+1) 1's Complement: It's a method where all the bits of a binary number are inverted, i.e., all 0s are changed to 1s and all 1s are changed to 0s.
+
+2) 2's Complement: it's found by taking the 1's complement of a binary number and then adding 1 to the least significant bit (rightmost bit)
+
+Let's find the 1's complement for the given binary numbers:
+
+1) 000011:
+1's Complement: 111100
+2's Complement: 111100 + 1 = 111101
+
+2) 10101100:
+1's Complement: 01010011
+2's Complement: 01010011 + 1 = 01010100
+
+3) 11111100:
+1's Complement: 00000011
+2's Complement: 00000011 + 1 = 00000100
+
+4) 10111001:
+1's Complement: 01000110
+2's Complement: 01000110 + 1 = 01000111
+
+5) 11100111:
+1's Complement: 00011000
+2's Complement: 00011000 + 1 = 00011001
+
+
+- How to Store Negative Numbers in Memory:
+Storing negative numbers in memory, especially in computers, is done using the 2's complement method. This allows us to represent and perform arithmetic operations on both positive and negative integers efficiently. Here's how it's done:
+
+Example: Let's store the negative number -5 in memory.
+
+Step 1: Ignore the negative sign.
+So, we'll work with the number 5.
+
+Step 2: Find the binary equivalent of the number.
+5 in binary is: 101
+
+Step 3: Take the 2's complement of the binary number.
+1's Complement of 101 is: 010
+2's Complement is: 010 + 1 = 011
+
+So, the number -5 is stored in memory as the binary number 011.
+
+
+
+
