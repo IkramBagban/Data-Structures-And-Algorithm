@@ -2,7 +2,6 @@
 // question: 
 // 75 sort colors : https://leetcode.com/problems/sort-colors/description/
 
-// ikram
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
@@ -22,6 +21,9 @@ public:
             else if(nums[index] == 2){
                 swap(nums[index], nums[right]);
                 right--;
+
+                // no need to increase index in this condition 
+                // index++ // don't do this
             }else{
                 index++;
             }
