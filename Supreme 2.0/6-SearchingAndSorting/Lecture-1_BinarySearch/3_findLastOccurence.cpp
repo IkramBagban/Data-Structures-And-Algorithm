@@ -6,7 +6,6 @@
 #include <vector>
 using namespace std;
 
-// Function to find the last occurrence of 'target' in a sorted vector 'v'
 int findLastOcc(vector<int> v, int target)
 {
 
