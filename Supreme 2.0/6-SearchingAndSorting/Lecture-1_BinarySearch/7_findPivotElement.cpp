@@ -40,6 +40,7 @@ int main()
     vector<int> v3{30, 40, 50, 10, 20};
     vector<int> v4{}; // Empty array
     vector<int> v5{3, 8, 10, 17, 1}; 
+    vector<int> v6{3}; 
 
     // Call the findPivotElement function for each test case
     int IndexOfPivotElement1 = findPivotElement(v1);
@@ -47,6 +48,7 @@ int main()
     int IndexOfPivotElement3 = findPivotElement(v3);
     int IndexOfPivotElement4 = findPivotElement(v4);
     int IndexOfPivotElement5 = findPivotElement(v5);
+    int IndexOfPivotElement6 = findPivotElement(v6);
 
     // Print the results
     cout << "Index Of Pivot Element 1: " << IndexOfPivotElement1 << endl;
@@ -54,6 +56,7 @@ int main()
     cout << "Index Of Pivot Element 3: " << IndexOfPivotElement3 << endl;
     cout << "Index Of Pivot Element 4: " << IndexOfPivotElement4 << endl;
     cout << "Index Of Pivot Element 5: " << IndexOfPivotElement5 << endl;
+    cout << "Index Of Pivot Element 6: " << IndexOfPivotElement6 << endl;
 
     return 0;
 }
