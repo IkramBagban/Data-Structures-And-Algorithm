@@ -5,6 +5,7 @@
 #include <iostream>
 using namespace std;
 
+// question link :- https://practice.geeksforgeeks.org/problems/number-of-occurrence2259/1
 int count(int arr[], int n, int x)
 {
     int start = 0;          // Initialize the start index to the beginning of the array.
