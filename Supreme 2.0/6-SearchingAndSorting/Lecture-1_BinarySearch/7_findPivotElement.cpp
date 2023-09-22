@@ -37,7 +37,7 @@ int main()
     // Example test cases
     vector<int> v1{7, 9, 2, 3};
     vector<int> v2{9, 10, 1, 2, 3};
-    vector<int> v3{30, 40, 50, 10, 20};
+    vector<int> v3{30, 40, 50};
     vector<int> v4{}; // Empty array
     vector<int> v5{3, 8, 10, 17, 1}; 
     vector<int> v6{3}; 
