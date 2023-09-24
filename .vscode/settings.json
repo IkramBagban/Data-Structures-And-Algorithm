@@ -8,6 +8,7 @@
         "array": "cpp",
         "initializer_list": "cpp",
         "utility": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "vector": "cpp"
     }
 }
