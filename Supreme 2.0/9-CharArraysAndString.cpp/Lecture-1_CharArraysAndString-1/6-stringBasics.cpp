@@ -12,7 +12,8 @@ int main()
     cout << "Name: " << name << endl;
 
     string temp = "";
-
+temp.pop_back();
+cout << temp;
     // Display the length of the "name" string.
     cout << "Length of String: " << name.length() << endl;
 
