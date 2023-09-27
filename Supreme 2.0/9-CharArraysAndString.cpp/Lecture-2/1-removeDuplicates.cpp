@@ -1,3 +1,8 @@
+// Author: Ikram Bagban
+// Email: bagbanikram@gmail.com
+// GitHub: https://github.com/ikrambagban
+// question link : https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+
 class Solution {
 public:
     string removeDuplicates(string s) {
