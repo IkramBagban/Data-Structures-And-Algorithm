@@ -9,13 +9,11 @@ int factorial(int n) {
     // Base cases: These are conditions under which the function stops calling itself.
     // In the case of factorial, the factorial of 1 and 0 is defined as 1.
     
-    // If n is 1, we return 1 immediately.
-    if(n == 1)
+    // If n is 0 or 1, the factorial is 1.
+    if (n == 0 || n == 1)
+    {
         return 1;
-
-    // If n is 0, we return 1 immediately.
-    if(n == 0)
-        return 1;
+    }
 
     // Recursive call:
     // We break the problem into a smaller version of itself.
@@ -37,6 +35,6 @@ int factorial(int n) {
 int main() {
     // Test the function by finding the factorial of 5.
     // This will invoke our recursive factorial function and print the result.
-    cout << "Factorial of 5 is: " << factorial(5) << endl;
+    cout << "Factorial of 5 is: " << factorial(4) << endl;
     return 0;
 }
