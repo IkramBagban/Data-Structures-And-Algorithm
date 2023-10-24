@@ -46,9 +46,9 @@ int main()
 
     // Assigning values to public members of the object:
     s1.name = "Ikram";
-    s1.roll_no = 101;  // Let's say roll number is 101
-    s1.age = 20;       // Let's say age is 20
-    s1.grade = 12;     // Let's say grade is 12th
+    s1.roll_no = 13;  // Let's say roll number is 13
+    s1.age = 19;       // Let's say age is 19
+    s1.grade = 12;     // Let's say grade is 3rd Year
 
     // Printing the values of the properties:
     cout << "Name Of the s1 Student is " << s1.name << endl;
@@ -79,6 +79,8 @@ int main()
     // In the case of the 'Student' class, similar padding might be added due to the data types used, 
     // making its size potentially larger than the simple sum of its member sizes.
     cout << "Size Of The Class In Byte Is " << sizeof(s1) << endl;
+
+    
 
 
     return 0;
