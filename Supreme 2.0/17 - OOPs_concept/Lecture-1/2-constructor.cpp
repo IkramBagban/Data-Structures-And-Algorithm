@@ -11,9 +11,9 @@ private:
     bool gf; // Private member variable indicating whether the student has a girlfriend
 
 public:
-    string name; // Public member variable for student's name
-    int roll_no; // Public member variable for student's roll number
-    int age;     // Public member variable for student's age
+    string name; // Public member variable for student's name.
+    int roll_no; // Public member variable for student's roll number.
+    int age;     // Public member variable for student's age.
 
     // Constructors : Constructors are special member functions of a class.They are executed whenever new objects of that class are created.They have the same name as the class and don't return any type, not even void.
 
