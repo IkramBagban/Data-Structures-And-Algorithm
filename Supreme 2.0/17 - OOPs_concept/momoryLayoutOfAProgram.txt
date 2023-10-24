@@ -1,0 +1,62 @@
+The memory layout of a program refers to the way in which different parts of a program are organized in memory during its execution. This layout is crucial for understanding how variables are stored, accessed, and how memory-related issues might arise.
+
+Here's a general overview of the memory layout of a typical C++ program:
+
+1. **Text Segment (or Code Segment)**:
+    - Contains the executable code (compiled program instructions).
+    - It's generally kept in a read-only area to prevent the program from accidentally modifying its own instructions.
+    
+2. **Initialized Data Segment**:
+    - Contains global and static variables that have initialized values.
+    - It's typically divided into two parts:
+        - **Data Segment**: Contains initialized global and static variables with non-zero values.
+        - **BSS (Block Started by Symbol)**: Contains initialized global and static variables that are initialized with zero or do not have explicit initialization in code.
+
+3. **Uninitialized Data Segment**:
+    - Contains uninitialized global and static variables. 
+    - On many systems, this segment is actually part of the BSS.
+
+4. **Heap**:
+    - Memory area used for dynamic memory allocation.
+    - Functions like `malloc()`, `calloc()`, `new` in C++ allocate memory from the heap.
+    - The heap grows and shrinks during the program's execution as memory is allocated and deallocated.
+    - Manual management is often needed. For instance, in C++, you use `delete` to release memory allocated by `new`.
+
+5. **Stack**:
+    - Used for local variables, function parameters, return addresses, and for controlling the flow of program execution.
+    - Managed in a last-in-first-out (LIFO) order. When a function is called, its local variables, return address, and some bookkeeping information are pushed onto the stack. When the function returns, that data is popped off.
+    - Has a limited size, determined at the start of the program. If you exceed this size (e.g., due to deep or infinite recursion), a "stack overflow" occurs.
+
+6. **Command-line Arguments and Environment Variables**:
+    - When a program starts, the operating system often passes the command-line arguments and environment variables to the program. They are kept in this part of the memory.
+
+7. **Memory-mapped Segment**:
+    - Used for memory-mapped files and shared memory. This is an advanced topic, and it's where files or shared memory areas are mapped to the program's memory space.
+
+8. **External Libraries, DLLs, and Shared Libraries**:
+    - This isn't exactly part of the program's memory layout, but it's worth mentioning. External libraries that a program uses can be loaded into memory when a program starts (static linking) or during program execution (dynamic linking).
+
+Here's a visual representation of the layout:
+```
++-------------------------+
+| Command Line Arguments  |
+| and Environment Vars    |
++-------------------------+
+|         Stack           |
+|           |             |
+|           |             |
+|           v             |
+|                         |
+|           ^             |
+|           |             |
+|          Heap           |
++-------------------------+
+| Uninitialized Data (BSS)|
++-------------------------+
+| Initialized Data Segment|
++-------------------------+
+|       Text Segment      |
++-------------------------+
+```
+
+It's important to note that the exact details and order can vary depending on the operating system, architecture, and compiler. But this gives a general understanding of how things are typically organized.
