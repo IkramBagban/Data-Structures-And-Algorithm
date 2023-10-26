@@ -19,4 +19,5 @@ The life cycle of an object in object-oriented programming, particularly in lang
     - The object's memory is deallocated.
     - The destructor is called to handle any cleanup tasks. In languages like C++, destructors are used to release resources like memory or to perform other cleanup tasks.
     
+    
 It's important to note that the precise details of an object's life cycle can vary depending on the programming language. For instance, languages with garbage collection (e.g., Java, C#) handle destruction differently than languages without it (e.g., C++). In garbage-collected languages, objects are destroyed when they are no longer referenced, and the garbage collector decides when to reclaim their memory. In non-garbage-collected languages, the programmer has more direct control over the object's life cycle, especially its destruction.
