@@ -1,0 +1,22 @@
+The life cycle of an object in object-oriented programming, particularly in languages like C++, refers to the sequence of events from the moment an object is created until it is destroyed. The life cycle encompasses the following stages:
+
+1. **Creation/Instantiation**: 
+    - The object's memory is allocated.
+    - The appropriate constructor (default or parameterized) is called to initialize the object.
+
+2. **Initialization**:
+    - This occurs during the creation phase. 
+    - The constructor initializes the object's attributes/properties.
+
+3. **Usage**:
+    - The object's methods are called and its properties are accessed or modified.
+    - The object interacts with other objects or is used in computations.
+
+4. **Scope End**:
+    - If an object is created within a specific scope (like inside a function or a block), it will be marked for destruction once the scope ends.
+
+5. **Destruction**:
+    - The object's memory is deallocated.
+    - The destructor is called to handle any cleanup tasks. In languages like C++, destructors are used to release resources like memory or to perform other cleanup tasks.
+    
+It's important to note that the precise details of an object's life cycle can vary depending on the programming language. For instance, languages with garbage collection (e.g., Java, C#) handle destruction differently than languages without it (e.g., C++). In garbage-collected languages, objects are destroyed when they are no longer referenced, and the garbage collector decides when to reclaim their memory. In non-garbage-collected languages, the programmer has more direct control over the object's life cycle, especially its destruction.
