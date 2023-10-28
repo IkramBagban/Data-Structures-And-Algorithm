@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-// Base class definition
+// Base Class 
 class Base
 {
 public:
