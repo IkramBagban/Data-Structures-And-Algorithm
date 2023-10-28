@@ -1,0 +1,110 @@
+Inheritance is a fundamental concept in object-oriented programming, allowing a class to inherit properties and behavior (methods) from another class. C++ supports various types of inheritance. Here are the primary types:
+
+1. **Single Inheritance:** 
+   - A class inherits from only one base class.
+   - It's the simplest form of inheritance.
+
+``````````````````````
+   [Base]
+      |
+      |
+   [Derived]
+
+```````````````````````
+
+   ```
+   class Base { /* ... */ };
+   class Derived : public Base { /* ... */ };
+   ```
+
+====================================================================================
+
+2. **Multiple Inheritance:** 
+   - A class can inherit from more than one base class.
+   - This type of inheritance can sometimes lead to complexities, like the diamond problem.
+
+```````````````````````
+   [Base1]   [Base2]
+      |         |
+      |         |
+    [D e r i v e d]
+
+```````````````````````
+
+   
+   ```
+   class Base1 { /* ... */ };
+   class Base2 { /* ... */ };
+   class Derived : public Base1, public Base2 { /* ... */ };
+   ```
+
+====================================================================================
+
+
+3. **Multilevel Inheritance:** 
+   - A class derives from a base class, which in turn is derived from another class.
+   - It's like a chain of inheritance.
+
+```````````````````````
+         [Base]
+            |
+            |
+         [Middle]
+            |
+            |
+         [Derived]
+
+```````````````````````
+   
+   ```
+   class Base { /* ... */ };
+   class Middle : public Base { /* ... */ };
+   class Derived : public Middle { /* ... */ };
+   ```
+
+====================================================================================
+
+
+4. **Hierarchical Inheritance:** 
+   - Multiple derived classes inherit from a single base class.
+
+```````````````````````
+          [Base]
+          /    \
+         /      \
+   [Derived1] [Derived2]
+
+``````````````````````` 
+   
+   ```
+   class Base { /* ... */ };
+   class Derived1 : public Base { /* ... */ };
+   class Derived2 : public Base { /* ... */ };
+   ```
+
+====================================================================================
+
+
+5. **Hybrid Inheritance:** 
+   - A combination of more than one type of inheritance mentioned above.
+   - It can lead to complexities, and care should be taken to avoid issues like the diamond problem. One way to resolve such issues in C++ is by using virtual inheritance.
+   
+``````````````````````` 
+       [Base]
+      /     \
+     /       \
+   [Mid1]   [Mid2]
+     \       /
+      \     /
+     [Derived]
+  
+``````````````````````` 
+   
+   ```
+   class Base { /* ... */ };
+   class Middle1 : public Base { /* ... */ };
+   class Middle2 : public Base { /* ... */ };
+   class Derived : public Middle1, public Middle2 { /* ... */ };
+   ```
+
+Each type of inheritance serves a specific purpose and is used based on the relationship between the base class and the derived class. However, it's essential to choose the appropriate inheritance type thoughtfully, considering both the requirements and the potential pitfalls, especially with multiple and hybrid inheritance.
