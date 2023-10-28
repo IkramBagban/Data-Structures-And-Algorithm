@@ -1,0 +1,66 @@
+"Mode of Inheritance" in C++ typically refers to the way in which a derived class inherits members from its base class. This mode is determined by the access specifier used in the inheritance. In C++, there are three primary modes of inheritance: public, protected, and private.
+
+
+
+-----------------------------------------------------------------------------------------
+| Base Class Access  | Public Inheritance | Protected Inheritance | Private Inheritance |
+|--------------------|--------------------|-----------------------|---------------------|
+| - (Public)         | - (Public)         | - (Protected)         | - (Private)         |
+| - (Protected)      | - (Protected)      | - (Protected)         | - (Private)         |
+| - (Private)        | X (Not Accessible) | X (Not Accessible)    | X (Not Accessible)  |
+-----------------------------------------------------------------------------------------
+
+Let's dive deeper into each mode:
+
+1. **Public Inheritance:**
+   - When a class is derived publicly from a base class, the public members of the base class become public members in the derived class, and the protected members of the base class become protected members of the derived class.
+   - The private members of the base class are not accessible directly from the derived class.
+   - This is the most commonly used mode of inheritance because it maintains the "is-a" relationship. (i.e., if you have a base class `Vehicle` and a derived class `Car`, using public inheritance means "Car is a Vehicle").
+   
+   ```
+   class Base {
+   public:
+       void pubFunc() {}
+   protected:
+       void protFunc() {}
+   private:
+       void privFunc() {}
+   };
+   
+   class Derived : public Base {
+       // Here, pubFunc() is public
+       // protFunc() is protected
+       // privFunc() is not accessible
+   };
+   ```
+
+2. **Protected Inheritance:**
+   - When a class is derived using protected inheritance, both public and protected members of the base class become protected members of the derived class.
+   - Again, the private members of the base class are not accessible directly from the derived class.
+   - This mode is less common and is used when you want the derived class to be implemented in terms of the base class, but you don't want to expose the base class's interface to the users of the derived class.
+   
+   ```
+   class Derived : protected Base {
+       // Here, pubFunc() is protected
+       // protFunc() is protected
+       // privFunc() is not accessible
+   };
+   ```
+
+3. **Private Inheritance:**
+    - Public members of the base class become private in the derived class.
+    - Protected members of the base class become private in the derived class.
+    - Private members of the base class are not accessible in the derived class.
+   
+   ```
+   class Derived : private Base {
+       // Here, pubFunc() is private
+       // protFunc() is private
+       // privFunc() is not accessible
+   };
+   ```
+
+In most cases, public inheritance is the mode developers choose because it best maintains the intuitive "is-a" relationship between the base and derived classes. The other modes, protected and private inheritance, are used less frequently and in more specialized situations.
+
+
+
