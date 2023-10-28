@@ -2,6 +2,22 @@
 // Email: bagbanikram@gmail.com
 // GitHub: https://github.com/ikrambagban
 
+// Hybrid inheritance
+// Hybrid inheritance is a combination of more than one type of inheritance (like single, multiple, multilevel, and hierarchical inheritance) within a single program.
+
+// In simple words: Hybrid inheritance means when a program uses a mix of different inheritance styles.
+
+//      Person
+//     /    \
+// Teacher Researcher
+//     \    /  
+//    Professor
+
+// In this representation:
+
+// Teacher and Researcher both inherit from Person (hierarchical inheritance).
+// Professor inherits from both Teacher and Researcher (multiple inheritance).
+// This combination of hierarchical and multiple inheritances is an example of hybrid inheritance.
 
 #include <iostream>
 using namespace std;

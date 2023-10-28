@@ -52,7 +52,7 @@ Inheritance is a fundamental concept in object-oriented programming, allowing a 
          [Middle]
             |
             |
-         [Derived]
+        [Derived]
 
 ```````````````````````
    
