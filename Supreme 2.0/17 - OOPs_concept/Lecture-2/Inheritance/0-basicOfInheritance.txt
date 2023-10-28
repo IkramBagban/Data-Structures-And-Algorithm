@@ -10,5 +10,3 @@
 
 # Why and when to use inheritance?
 - Consider a group of vehicles. You need to create classes for Bus, Car, and Truck. The methods fuelAmount(), capacity(), applyBrakes() will be the same for all three classes. If we create these classes avoiding inheritance then we have to write all of these functions in each of the three classes as shown below figure: 
-
-# Mode Of Inheritance
