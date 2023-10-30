@@ -33,14 +33,16 @@ class Demo {
 public:
    Demo(int a) : a(a) {}
    
-   Demo operator+(const Demo& other) {
-      return Demo(this->a + other.a);
+   // Overloading the + operator
+   Demo operator+(const Demo& obj) {
+      return Demo(this->a + obj.a);
    }
 };
 
-// Now, we can do:
-Demo Demo1(3);  
-Demo Demo2(4);  
-Demo sum = Demo1 + Demo2;
+// Using the class:
+Demo demo1(3);  // An object with value 3
+Demo demo2(4);  // An object with value 4
+Demo sum = demo1 + demo2;  // Combining both to get an object with value 7
 
-cout << sum << endl;
+
+
