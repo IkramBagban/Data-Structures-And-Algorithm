@@ -1,5 +1,4 @@
 Types of Linked Lists:
-
 1) Singly Linked List: Each node points to the next node and the last node points to null.
 ```
 Head
