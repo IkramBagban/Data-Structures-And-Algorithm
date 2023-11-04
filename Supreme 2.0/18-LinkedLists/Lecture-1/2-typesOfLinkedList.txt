@@ -1,0 +1,33 @@
+Types of Linked Lists:
+
+1) Singly Linked List: Each node points to the next node and the last node points to null.
+```
+Head
+  ↓
+┌───┐    ┌───┐    ┌───┐
+│ A │ -> │ B │ -> │ C │ -> null
+└───┘    └───┘    └───┘
+```
+In this singly linked list, each box represents a node. The first part of the node is the data (A, B, C), and the arrow coming out is the pointer to the next node. The last node points to null, indicating the end of the list.
+
+
+
+2) Doubly Linked List: Each node has two links, one to the next node and another to the previous one.
+```
+ null <-┌───┐<=>┌───┐<=>┌───┐-> null
+        │ A │   │ B │   │ C │
+        └───┘   └───┘   └───┘
+```
+Here, the <=> symbol represents the nodes in a doubly linked list where each node has two pointers: one points to the next node and another points to the previous node. The list starts and ends with null.
+
+
+
+3) Circular Linked List: The last node points back to the first node, forming a circle.
+```
+┌───┐    ┌───┐    ┌───┐
+│ A │ -> │ B │ -> │ C │
+└───┘    └───┘    └───┘
+   ↑                │
+   └────────────────┘
+```
+n a circular linked list, the nodes are connected like a singly linked list, but the last node points back to the first node instead of null, forming a complete circle.

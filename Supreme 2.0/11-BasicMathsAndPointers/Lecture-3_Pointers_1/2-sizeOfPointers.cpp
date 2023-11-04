@@ -29,7 +29,7 @@ int main() {
     char* chPtr = &ch;
 
     // Output the size (in bytes) of 'chPtr' using the 'sizeof' operator.
-    cout << "Size of chPtr is " << sizeof(chPtr) << " bytes" << endl;
+    cout << "Size of chPtr is *+3" << sizeof(chPtr) << " bytes" << endl;
 
     // Declare a float variable 'fl' and initialize it with the value 23.99.
     float fl = 23.99;
