@@ -95,28 +95,51 @@ void insertAtPosition(Node *&head, Node *&tail, int position, int data)
         insertAtTail(head, tail, data);
         return; // Return after insertion to avoid further processing
     }
+    // else
+    // {
+    //     // If the position is in the middle, perform the insertion here
+    //     // Step 1: Create a new node with the given data
+    //     Node *new_node = new Node(data);
+    //     // Initialize prevNode to NULL, it will be used to traverse the list
+    //     Node *prevNode = NULL;
+    //     // Start with currNode at the head of the list
+    //     Node *currNode = head;
+
+    //     // Traverse the list until the desired position is reached
+    //     while(position != 1){
+    //         prevNode = currNode; // Keep track of the previous node
+    //         currNode = currNode->next; // Move to the next node
+    //         position--; 
+    //     }
+
+    //     // Link the new node between prevNode and currNode
+    //     prevNode->next = new_node; // prevNode will point at new Node. means it is connected with prev node.
+    //     new_node->next = currNode; // here we are pointing newNode to currNode.
+    //     // prevNode -> new_node -> currNode
+    //     // is taraf se ham given position pe new_node add kar rahe.
+    // }
+
+    // here we use only prevNode to insert at given position. 
     else
     {
-        // If the position is in the middle, perform the insertion here
         // Step 1: Create a new node with the given data
         Node *new_node = new Node(data);
-        // Initialize prevNode to NULL, it will be used to traverse the list
-        Node *prevNode = NULL;
-        // Start with currNode at the head of the list
-        Node *currNode = head;
+        // Start with prevNode at the head of the list
+        Node *prevNode = head;
 
-        // Traverse the list until the desired position is reached
-        while(position != 1){
-            prevNode = currNode; // Keep track of the previous node
-            currNode = currNode->next; // Move to the next node
-            position--; 
+        // Move prevNode to the node just before the position
+        // The position is decremented until it reaches 2 because
+        // we want prevNode to point to the node after which we have to insert the new node.
+        // Position 2 means prevNode will be the first node because the list is 1-indexed.
+        while(position > 2){
+            prevNode = prevNode->next;
+            position--;
         }
 
-        // Link the new node between prevNode and currNode
-        prevNode->next = new_node; // prevNode will point at new Node. means it is connected with prev node.
-        new_node->next = currNode; // here we are pointing newNode to currNode.
-        // prevNode -> new_node -> currNode
-        // is taraf se ham given position pe new_node add kar rahe.
+        // Insert the new node into the list
+        new_node->next = prevNode->next;
+        prevNode->next = new_node;
+
     }
 }
 
@@ -137,7 +160,7 @@ int main()
     print(head);
 
     // Inserting at specific positions
-    insertAtPosition(head, tail, 4, 1000); // Position 4 assumes a 1-indexed list
+    insertAtPosition(head, tail, 6, 1000); // Position 4 assumes a 1-indexed list
 
     // Printing the list after insertion at specific positions
     cout << "List after insertion at specific positions: " << endl;
