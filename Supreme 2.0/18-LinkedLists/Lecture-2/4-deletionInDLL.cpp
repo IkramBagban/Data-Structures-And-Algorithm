@@ -111,46 +111,59 @@ void insert(Node *&head, Node *&tail, int position, int data)
 
 void deleteNode(Node *&head, Node *&tail, int position)
 {
-    int len = getLength(head);
+    // Check if the list is empty.
     if (head == NULL)
     {
         cout << "List Is already Empty" << endl;
+        return;
     }
 
-    if (len == 1 && position == 1)
+    // ***Special case if the list has only one node.***
+    if (head == tail && position == 1)
     {
-        Node *temp = head;
-        head = tail = NULL;
-        delete temp;
+        delete head;        // Delete the only node.
+        head = tail = NULL; // Reset head and tail to NULL.
     }
-
+    // Deletion of the first node.
     else if (position == 1)
     {
         Node *temp = head;
-        head = head->next;
-        head->prev = NULL;
-        delete temp;
+        head = head->next; // Move head to the next node.
+        head->prev = NULL; // Update the new head's prev pointer.
+        delete temp;       // Delete the old head.
     }
-    else if (position == len)
+    // Deletion of the last node.
+    else if (position == getLength(head))
     {
-        tail = tail->prev;
-        tail->next->prev = NULL;
-        tail->next = NULL;
-        delete tail->next;
+        Node *temp = tail;
+        tail = tail->prev; // Move tail back.
+        tail->next = NULL; // Update the new tail's next pointer.
+        delete temp;       // Delete the old tail.
     }
+    // Deletion from the middle.
     else
-    { // delete from middle
+    {
         Node *currNode = head;
-        while (position != 1)
-        {
+        while (position > 1)
+        { // Find the node at the given position.
             currNode = currNode->next;
             position--;
         }
 
-        currNode->prev->next = currNode->next;
-        currNode->next->prev = currNode->prev;
-        currNode->prev = currNode->next = NULL;
-        delete currNode;
+        currNode->prev->next = currNode->next; // Bridge the previous node's next to current's next.
+        currNode->next->prev = currNode->prev; // Bridge the next node's prev to current's prev.
+
+        // Before deletion:
+        // ... <--> [prevNode] <--> [currNode] <--> [nextNode] <--> ...
+
+        // After the operation:
+        // ... <--> [prevNode] <--> [nextNode] <--> ...
+
+        // And currNode is now disconnected:
+        // [prevNode] <--> [nextNode]
+        //    [currNode]  (ready to be deleted)
+
+        delete currNode; // Delete the current node.
     }
 }
 
@@ -159,7 +172,6 @@ int main()
     Node *head = NULL;
     Node *tail = NULL;
 
-    // Insert nodes into the list.
     insert(head, tail, 1, 50);
     insert(head, tail, 1, 40);
     insert(head, tail, 1, 30);
@@ -168,12 +180,10 @@ int main()
     print(head);
 
     cout << "After Deletion" << endl;
-    deleteNode(head, tail, 3);
-    deleteNode(head, tail, 2);
-    deleteNode(head, tail, 2);
-    deleteNode(head, tail, 2);
-    deleteNode(head, tail, 1);
-    // deleteNode(head, tail, 1);
+    deleteNode(head, tail, 5); // delete from tail
+    deleteNode(head, tail, 1); // delete from head
+    deleteNode(head, tail, 2); // delete from middle
+
     print(head);
     return 0;
 }
