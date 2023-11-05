@@ -5,25 +5,25 @@
 #include <iostream>
 using namespace std;
 
-class Node
-{
-    public:
+class Node {
+public:
     int data;
     Node *next;
-    Node *prev; // to keep track previous pointer.
+    Node *prev; // Pointer to the previous node in the list.
 
-    Node()
-    {
+    Node() {
         this->next = NULL;
         this->prev = NULL;
     }
-    Node(int data)
-    {
+
+    // Constructor with data initializes node with a given value and pointers to NULL.
+    Node(int data) {
         this->data = data;
         this->next = NULL;
         this->prev = NULL;
     }
 };
+
 
 
 void print(Node *head)
@@ -53,63 +53,59 @@ int getLength(Node *head)
     return len;
 }
 
-void insert(Node*&head,Node*&tail, int position, int data){
 
-    Node* new_node = new Node(data);
-    if(head == NULL){ // empty LL
-        head = tail = new_node;
-        head->prev = NULL;
-        tail->next = NULL;
-        return;
-    }else if(position == 1){
-        // head = new_node;
-        new_node->next = head;
-        head = new_node;
-        
-        Node* temp = head->next;
-        temp->prev = head;
-        return;
-    }else if(position == getLength(head)+1){
-        // head = new_node;
-        tail->next = new_node;
-        new_node->prev = tail;
-        tail = new_node;
-        return;
-        
-    }else{
-        Node*prevNode = NULL;
-        Node*currNode = head;
-        while(position != 1){
+// Function to insert a new node into the linked list at a specified position.
+void insert(Node*& head, Node*& tail, int position, int data) {
+    Node* new_node = new Node(data); // Create a new node with the given data.
+
+    // Check if the given position is valid.
+    if (position > getLength(head) + 1 || position < 1) {
+        cout << "Please Give Valid position to insert";
+        return; // Return if the position is invalid.
+    }
+
+    // If the list is currently empty.
+    if (head == NULL) {
+        head = tail = new_node; // New node becomes both head and tail.
+    } else if (position == 1) { // Insertion at the head of the list.
+        new_node->next = head; // Point new node to the current head.
+        head->prev = new_node; // Update current head's prev to new node.
+        head = new_node; // New node becomes the new head.
+    } else if (position == getLength(head) + 1) { // Insertion at the tail of the list.
+        tail->next = new_node; // Current tail points to new node.
+        new_node->prev = tail; // New node's prev points to current tail.
+        tail = new_node; // New node becomes the new tail.
+    } else { // Insertion at a position in the middle of the list.
+        Node* prevNode = NULL; // Pointer to track the previous node.
+        Node* currNode = head; // Pointer to track the current node.
+
+        // Traverse the list until the correct position is reached.
+        while (position != 1) {
             prevNode = currNode;
             currNode = currNode->next;
             position--;
         }
 
+        // Insert the new node between prevNode and currNode.
         new_node->next = currNode;
         new_node->prev = prevNode;
-
         prevNode->next = new_node;
         currNode->prev = new_node;
-
-
-
     }
-
 }
 
-int main()
-{
+int main() {
+    Node* head = NULL; // Start with an empty list.
+    Node* tail = NULL; // Tail pointer for the list.
 
-    Node*head = NULL;
-    Node*tail = NULL;
-    insert(head,tail,1,40); // insert at head.
-    insert(head,tail,1,30); // insert at head.
-    insert(head,tail,1,10); // insert at head.
-    insert(head,tail,4,50); // insert at tail.
-    print(head);
+    // Insert nodes into the list.
+    insert(head, tail, 1, 40); // insert at head.
+    insert(head, tail, 1, 30); 
+    insert(head, tail, 1, 10);
+    insert(head, tail, 4, 50); // insert at tail.
+    print(head); 
 
-    insert(head,tail,2,20);
-    print(head);
-
-    return 0;
+    insert(head, tail, 2, 20); // Insert node with data=20 at position=2.
+    print(head); 
+    return 0; 
 }
