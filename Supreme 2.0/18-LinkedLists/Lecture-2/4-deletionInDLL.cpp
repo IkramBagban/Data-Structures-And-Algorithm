@@ -130,11 +130,27 @@ void deleteNode(Node *&head, Node *&tail, int position)
         head = head->next;
         head->prev = NULL;
         delete temp;
-    }else if(position == len){
+    }
+    else if (position == len)
+    {
         tail = tail->prev;
         tail->next->prev = NULL;
         tail->next = NULL;
         delete tail->next;
+    }
+    else
+    { // delete from middle
+        Node *currNode = head;
+        while (position != 1)
+        {
+            currNode = currNode->next;
+            position--;
+        }
+
+        currNode->prev->next = currNode->next;
+        currNode->next->prev = currNode->prev;
+        currNode->prev = currNode->next = NULL;
+        delete currNode;
     }
 }
 
@@ -152,14 +168,10 @@ int main()
     print(head);
 
     cout << "After Deletion" << endl;
-    deleteNode(head, tail, 5);
-    print(head);
-    deleteNode(head, tail, 4);
-    print(head);
     deleteNode(head, tail, 3);
-    print(head);
     deleteNode(head, tail, 2);
-    print(head);
+    deleteNode(head, tail, 2);
+    deleteNode(head, tail, 2);
     deleteNode(head, tail, 1);
     // deleteNode(head, tail, 1);
     print(head);
