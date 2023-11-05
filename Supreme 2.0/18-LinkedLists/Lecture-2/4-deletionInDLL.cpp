@@ -29,7 +29,6 @@ public:
 
 void print(Node *head)
 {
-    cout << "print" << endl;
     if (head == NULL)
     {
         cout << "Linked list is Empty";
@@ -131,6 +130,11 @@ void deleteNode(Node *&head, Node *&tail, int position)
         head = head->next;
         head->prev = NULL;
         delete temp;
+    }else if(position == len){
+        tail = tail->prev;
+        tail->next->prev = NULL;
+        tail->next = NULL;
+        delete tail->next;
     }
 }
 
@@ -148,12 +152,16 @@ int main()
     print(head);
 
     cout << "After Deletion" << endl;
-    deleteNode(head, tail, 1);
-    deleteNode(head, tail, 1);
-    deleteNode(head, tail, 1);
-    deleteNode(head, tail, 1);
+    deleteNode(head, tail, 5);
+    print(head);
+    deleteNode(head, tail, 4);
+    print(head);
+    deleteNode(head, tail, 3);
+    print(head);
+    deleteNode(head, tail, 2);
     print(head);
     deleteNode(head, tail, 1);
+    // deleteNode(head, tail, 1);
     print(head);
     return 0;
 }
