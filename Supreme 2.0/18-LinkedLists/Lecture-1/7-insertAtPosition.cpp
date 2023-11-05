@@ -119,28 +119,29 @@ void insertAtPosition(Node *&head, Node *&tail, int position, int data)
     //     // is taraf se ham given position pe new_node add kar rahe.
     // }
 
-    // here we use only prevNode to insert at given position. 
-    else
-    {
-        // Step 1: Create a new node with the given data
-        Node *new_node = new Node(data);
-        // Start with prevNode at the head of the list
-        Node *prevNode = head;
+    // here we use only prevNode to insert at given position.   
+    // else
+    // {
+    //     // Step 1: Create a new node with the given data
+    //     Node *new_node = new Node(data);
+    //     // Start with prevNode at the head of the list
+    //     Node *prevNode = head;
 
-        // Move prevNode to the node just before the position
-        // The position is decremented until it reaches 2 because
-        // we want prevNode to point to the node after which we have to insert the new node.
-        // Position 2 means prevNode will be the first node because the list is 1-indexed.
-        while(position > 2){
-            prevNode = prevNode->next;
-            position--;
-        }
+    //     // Move prevNode to the node just before the position
+    //     // The position is decremented until it reaches 2 because
+    //     // we want prevNode to point to the node after which we have to insert the new node.
+    //     // Position 2 means prevNode will be the first node because the list is 1-indexed.
+    //     while(position > 2){
+    //         prevNode = prevNode->next;
+    //         position--;
+    //     }
 
-        // Insert the new node into the list
-        new_node->next = prevNode->next;
-        prevNode->next = new_node;
+    //     // Insert the new node into the list
+    //     new_node->next = prevNode->next;
+    //     prevNode->next = new_node;
 
-    }
+    // }
+    
 }
 
 int main()
