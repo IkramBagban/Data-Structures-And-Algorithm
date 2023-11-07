@@ -57,7 +57,6 @@ void createCycle(ListNode *head, ListNode *tail, int position)
     tail->next = temp;
 }
 
-// Function to find the starting point of the cycle in the linked list
 ListNode *findStartingPoint(ListNode *head)
 {
     ListNode *slow = head;
