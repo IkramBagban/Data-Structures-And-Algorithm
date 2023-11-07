@@ -44,8 +44,14 @@ public:
         ListNode* slow = head;
         ListNode* fast = head;
 
+        /* ``````````````````````````````````````````````
+        Important Note : if cycle present hai. 
+        to fast and slow ka distance 1 step kam hota rahenga.
+        aur ek time aisa aayenga jab wo dono same node per point kar rahe hai.
+        ``````````````````````````````````````````````*/
+
         // Loop until fast pointer reaches the end of the list
-        while(fast != NULL && fast->next != NULL){
+        while(fast != NULL && fast->next != NULL){ 
             // Move the fast pointer two steps ahead
             fast = fast->next->next;
             // Move the slow pointer one step ahead
