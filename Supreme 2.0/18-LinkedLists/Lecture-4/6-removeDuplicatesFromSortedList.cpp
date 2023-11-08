@@ -1,3 +1,9 @@
+// Author: Ikram Bagban
+// Email: bagbanikram@gmail.com
+// GitHub: https://github.com/ikrambagban
+// Question Link : https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
+
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
