@@ -104,15 +104,15 @@ int main()
 
     insertAtHead(head, tail, 50);
     insertAtHead(head, tail, 60);
-    insertAtHead(head, tail, 70);
+    insertAtHead(head, tail, 70); // This node will be at the fifth position
     insertAtHead(head, tail, 40);
-    insertAtHead(head, tail, 30); // This node will be at the fifth position
+    insertAtHead(head, tail, 30); 
     insertAtHead(head, tail, 20);
     insertAtHead(head, tail, 10);
 
     print(head);
 
-    // Create a cycle in the list. The tail node will point to the node at position 3
+    // Create a cycle in the list. The tail node will point to the node at position 5
     createCycle(head, tail, 5); // After this line, a loop (cycle) is created.
 
     // Find the starting point of the cycle in the linked list
