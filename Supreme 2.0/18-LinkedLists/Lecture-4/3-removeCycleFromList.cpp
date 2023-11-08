@@ -78,7 +78,7 @@ ListNode *findStartingPoint(ListNode *head)
     slow = head;
 
     // Loop to find the starting point of the cycle
-    while (slow != fast)
+    while (slow->next != fast->next)
     {
         // Move both pointers at the same pace
         slow = slow->next;
@@ -103,26 +103,29 @@ int main()
     ListNode *tail = NULL;
 
     insertAtHead(head, tail, 50);
+    insertAtHead(head, tail, 60);
+    insertAtHead(head, tail, 70);
     insertAtHead(head, tail, 40);
-    insertAtHead(head, tail, 30); // This node will be at the third position
+    insertAtHead(head, tail, 30); // This node will be at the fifth position
     insertAtHead(head, tail, 20);
     insertAtHead(head, tail, 10);
 
     print(head);
 
     // Create a cycle in the list. The tail node will point to the node at position 3
-    createCycle(head, tail, 3); // After this line, a loop (cycle) is created.
+    createCycle(head, tail, 5); // After this line, a loop (cycle) is created.
 
     // Find the starting point of the cycle in the linked list
     ListNode *startingPointOfCycle = findStartingPoint(head);
+    cout << "Starting Point Of Cycle: " << startingPointOfCycle->next->val << endl;
+    startingPointOfCycle->next = NULL;
 
     // remove cycle
-    removeCycle(head, startingPointOfCycle);
+    // removeCycle(head, startingPointOfCycle);
 
     // Print function is commented out to avoid infinite loop due to the cycle
     print(head); // WARNING: This will cause an infinite loop!
 
-    cout << "Starting Point Of Cycle: " << startingPointOfCycle->val << endl;
 
     return 0;
 }
