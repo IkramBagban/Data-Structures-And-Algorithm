@@ -15,7 +15,7 @@ public:
     
     // Function to push a value onto the stack.
     void push(int val) {
-        // If the stack is empty, push the value and set it as the current minimum.
+        // If the stack is empty, push the value and set it as the current minimum
         if(st.empty()){
             pair<int,int> p;
             p.first = val; // The value being pushed
