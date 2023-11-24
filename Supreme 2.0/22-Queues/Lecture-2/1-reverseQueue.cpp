@@ -1,3 +1,8 @@
+// Author: Ikram Bagban
+// Email: bagbanikram@gmail.com
+// GitHub: https://github.com/ikrambagban
+// Question Link : https://practice.geeksforgeeks.org/problems/queue-reversal/1
+
 class Solution
 {
 public:
