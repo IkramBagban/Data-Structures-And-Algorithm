@@ -61,6 +61,38 @@ queue<int> reverse_k_elements_of_queue(queue<int> q, int k, int size)
     return q;
 }
 
+queue<int> reverse_k_elements_of_queue_method2(queue<int> q, int k)
+{
+    stack<int> st;    // Stack to help in reversing the elements
+    int n = q.size(); // Size of the queue
+
+    // Step 1: Reverse the first k elements of the queue
+    for (int i = 0; i < k; i++)
+    {
+        int temp = q.front(); // Get the front element
+        st.push(temp);        // Push it onto the stack
+        q.pop();              // Remove the element from the queue
+    }
+
+    // Step 2: Put the stack elements back into the queue, which reverses the order of the first k elements
+    while (!st.empty())
+    {
+        int temp = st.top(); // Get the top element from the stack
+        st.pop();            // Remove the element from the stack
+        q.push(temp);        // Enqueue it back into the queue
+    }
+
+    // Step 3: Move the remaining elements (n-k) to the back of the queue to maintain the original order of these elements
+    for (int i = 0; i < n - k; i++)
+    {
+        int temp = q.front(); // Get the front element
+        q.pop();              // Dequeue the element
+        q.push(temp);         // Enqueue it back to maintain the order
+    }
+
+    return q;
+}
+
 // Function to print the elements of the queue
 void printQueue(queue<int> q)
 {
@@ -83,15 +115,17 @@ int main()
     cout << "Original Queue: " << endl;
     printQueue(q);
     cout << endl;
-    cout
-        << endl
-        << "After reversing first k elements: " << endl;
+    
+    cout << "Method 1: Reversing first k elements" << endl;
+    queue<int> firstKReversedMethod1 = reverse_k_elements_of_queue(q, 3, 5);
+    printQueue(firstKReversedMethod1);
+    cout << endl;
 
-    queue<int> a = reverse_k_elements_of_queue(q, 3, 5);
-    printQueue(a);
+    // Method 2
+    cout << "Method 2: Reversing first k elements" << endl;
+    queue<int> firstKReversedMethod2 = reverse_k_elements_of_queue_method2(q, 3);
+    printQueue(firstKReversedMethod2);
+    cout << endl;
 
     return 0;
 }
-
-
-
