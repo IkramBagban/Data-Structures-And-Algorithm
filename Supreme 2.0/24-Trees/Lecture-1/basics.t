@@ -26,3 +26,7 @@ Siblings: Siblings are nodes in a tree that share the same parent node.
 'Leaf': A leaf is a node with no children.
 
 'Levels': The levels of a tree represent the distance from the root, with the root being at level 0.
+
+
+
+'skew tree'
