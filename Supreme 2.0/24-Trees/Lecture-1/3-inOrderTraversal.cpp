@@ -86,6 +86,6 @@ main()
     // OUTPUT SHOULD BE : 
     // 40 20 50 30 60 10
     root = buildTree();
-   inOrderTraversal(root);
+    inOrderTraversal(root);
     return 0;
 }
