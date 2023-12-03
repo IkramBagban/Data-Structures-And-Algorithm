@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    // pointer for left child
+    Node *left;
+    // pointer for right child
+    Node *right;
+
+    Node(int data)
+    {
+        this->data = data;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
+
+Node *buildTree()
+{
+
+    int data;
+    cout << "Enter the data" << endl;
+    cin >> data;
+
+    // base case. -1 data me aaya to us child ko NULL mark kardo.
+    if (data == -1)
+    {
+        return NULL;
+    }
+
+    // Step 1 : create root node
+    Node *root = new Node(data);
+
+    // step 2 : create left child
+    cout << "Enter data for left part of " << data << endl;
+    root->left = buildTree();
+
+    // step 3 : create right child
+    cout << "Enter data for right part of " << data << endl;
+    root->right = buildTree();
+
+    return root;
+}
+
+main()
+{
+
+    Node *root = NULL;
+    root = buildTree();
+    return 0;
+}
