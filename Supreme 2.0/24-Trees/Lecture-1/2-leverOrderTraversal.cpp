@@ -50,20 +50,32 @@ void levelOrderTraversal(Node *root)
 {
     queue<Node *> q;
     q.push(root);
+    q.push(NULL);
 
     while (!q.empty())
     {
         Node *temp = q.front();
         q.pop();
 
-        cout << temp->data << " ";
-        if (temp->left)
+        if (temp == NULL)
         {
-            q.push(temp->left);
+            cout << endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
         }
-        if (temp->right)
+        else
         {
-            q.push(temp->right);
+
+            cout << temp->data << " ";
+            if (temp->left)
+            {
+                q.push(temp->left);
+            }
+            if (temp->right)
+            {
+                q.push(temp->right);
+            }
         }
     }
 }
@@ -72,19 +84,40 @@ main()
 {
 
     Node *root = NULL;
-    // input test case;
+    // test case 1;
     // 10 20 40 -1 -1 30 50 -1 -1 60 -1 -1 -1
     // tree structure
     //     10      // level 0
-    //    /  
+    //    /
     //   20        // level 1
     //  /  \
     // 40   30     // level 2
     //     /  \
     //    50   60  // level 3
-    root = buildTree();
+    
+    // OUTPUT :
+    // 10
+    // 20
+    // 40 30
+    // 50 60
 
-    // Output should be : 10, 20, 40, 30, 50, 60
+    // test case 2
+    // 1 2 4 -1 -1 5 8 -1 -1 9 -1 -1 3 6 -1 -1 7 -1 -1
+    // tree structure 
+    //     1
+    //    /  \
+    //   2    3
+    //  / \  / \
+    // 4  5  6  7
+    //   / \
+    //  8   9
+
+    // OUTPUT :
+    // 1
+    // 2 3
+    // 4 5 6 7
+    // 8 9
+    root = buildTree();
     levelOrderTraversal(root);
 
     return 0;
