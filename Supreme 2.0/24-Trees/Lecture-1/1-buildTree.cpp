@@ -49,6 +49,16 @@ main()
 {
 
     Node *root = NULL;
+     // Input;
+    // 10 20 40 -1 -1 30 50 -1 -1 60 -1 -1 -1
+    // tree structure
+    //     10    
+    //    /
+    //   20      
+    //  /  \
+    // 40   30   
+    //     /  \
+    //    50   60
     root = buildTree();
     return 0;
 }
