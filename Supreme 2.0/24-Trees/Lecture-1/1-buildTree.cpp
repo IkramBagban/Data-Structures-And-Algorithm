@@ -35,11 +35,11 @@ Node *buildTree()
     Node *root = new Node(data);
 
     // step 2 : create left child
-    cout << "Enter data for left part of " << data << endl;
-    root->left = buildTree();
+        cout << "Enter data for left part of " << data << endl;
+        root->left = buildTree();
 
-    // step 3 : create right child
-    cout << "Enter data for right part of " << data << endl;
+        // step 3 : create right child
+        cout << "Enter data for right part of " << data << endl;
     root->right = buildTree();
 
     return root;
