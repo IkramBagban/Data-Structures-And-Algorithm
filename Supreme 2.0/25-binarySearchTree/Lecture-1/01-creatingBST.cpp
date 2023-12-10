@@ -3,6 +3,7 @@
 // GitHub: https://github.com/ikrambagban
 
 #include <iostream>
+#include <queue>
 using namespace std;
 
 class Node
@@ -49,12 +50,43 @@ void createBST(Node *&root)
     }
 }
 
+void levelOrderTraversal(Node* root){
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+
+        if(temp == NULL){
+            cout << endl;
+
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }else{
+            cout << temp-> data << " ";
+
+            if(temp->left){
+                q.push(temp->left);
+            }
+
+            if(temp->right){
+                q.push(temp->right);
+            }
+
+        }
+    }
+}
 int main()
 {
 
-    Node* root = NULL;
+    Node *root = NULL;
     createBST(root);
 
 
+    cout << "Level Order Traversal" << endl;
+    levelOrderTraversal(root);
     return 0;
 }
