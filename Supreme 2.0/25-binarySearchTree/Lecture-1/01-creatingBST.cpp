@@ -35,9 +35,26 @@ Node *insertIntoBST(Node *root, int data)
     return root;
 }
 
+void createBST(Node *&root)
+{
+    cout << "Enter Data" << endl;
+    int data;
+    cin >> data;
+
+    while (data != -1)
+    {
+        root = insertIntoBST(root, data);
+        cout << "Enter Data" << endl;
+        cin >> data;
+    }
+}
 
 int main()
 {
+
+    Node* root = NULL;
+    createBST(root);
+
 
     return 0;
 }

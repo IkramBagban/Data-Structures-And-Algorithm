@@ -6,6 +6,7 @@
         "iostream": "cpp",
         "random": "cpp",
         "vector": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "array": "cpp"
     }
 }
