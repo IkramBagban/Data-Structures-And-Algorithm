@@ -79,14 +79,89 @@ void levelOrderTraversal(Node* root){
         }
     }
 }
+
+
+
+// LNR => left, current Node, right
+void inOrderTraversal(Node *root)
+{
+
+    Node *temp = root;
+
+    // base case. -1 data me aaya to return kardo.
+    if (temp == NULL)
+    {
+        return;
+    }
+
+    // Step 1 : jab tak null na mile left jao.
+    inOrderTraversal(temp->left);
+
+    // step 2 : data print karo.
+    cout <<  temp->data << " ";
+
+    // step 3 : right jao.
+    inOrderTraversal(temp->right);
+
+}
+
+
+// pre Order traversal : NLR
+void preOrderTraversal(Node* root){
+
+    if(root == NULL){
+        return;
+    }
+
+    // step 1 : print current Node
+    cout << root->data << " " ;
+
+    // step 2 : Node k left child pe jao
+    preOrderTraversal(root->left);
+
+    // step 3 : Node k right child pe jao.
+    preOrderTraversal(root->right);
+}
+
+// post Order traversal : LRN
+void postOrder(Node* root){
+
+    if(root == NULL){
+        return;
+    }
+
+    
+    // step 1 (L): Node k left child pe jao
+    postOrder(root->left);
+
+    // step 2 (R): Node k right child pe jao.
+    postOrder(root->right);
+
+    // step 3 (N): print current Node
+    cout << root->data << " " ;
+
+}
 int main()
 {
 
     Node *root = NULL;
     createBST(root);
 
-
     cout << "Level Order Traversal" << endl;
-    levelOrderTraversal(root);
+    levelOrderTraversal(root); // in inorder traversal you'll get sorted data.
+    cout << endl;
+
+    cout << "in Order Traversal" << endl;
+    inOrderTraversal(root);
+    cout << endl;
+
+    cout << "post Order Traversal" << endl;
+    postOrder(root);
+    cout << endl;
+
+    cout << "in Order Traversal" << endl;
+    preOrderTraversal(root);
+    cout << endl;
+
     return 0;
 }
