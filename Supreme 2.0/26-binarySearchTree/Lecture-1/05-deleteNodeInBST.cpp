@@ -1,8 +1,9 @@
 // Author: Ikram Bagban
 // Email: bagbanikram@gmail.com
 // GitHub: https://github.com/ikrambagban
+// Question : https://leetcode.com/problems/delete-node-in-a-bst/
 
-// Aproach :
+// approach :
 // step 1 : search target
 // step 2 : check its cases and delete as per case
 /*{
