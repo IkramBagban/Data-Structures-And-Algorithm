@@ -124,7 +124,7 @@ public:
         // right ya left OCc dono me se ek bhi -1 aya mean dono -1 hai. 
 	    if(rightOcc == -1) return 0;
 	    
-	    // right most occ index
+	    // left most occ index
 	    int leftOcc = findtOcc(arr, n, x, false);
 	    
 	    
