@@ -59,6 +59,8 @@ int count(int arr[], int n, int x)
     return 0; // If x is not found in the array, return 0.
 }
 
+
+
 int main()
 {
 
@@ -71,3 +73,62 @@ int main()
 
     return 0;
 }
+
+
+// Solution 2 :refactored code.
+class Solution{
+public:	
+    // findRightOcc is a flag. 
+    // if it is true means we are here for search right most occurence 
+    // if it is false that means we are her for left most occ
+	int findtOcc (int arr[], int n , int x, bool findRightOcc){
+	    int start = 0;
+	    int end = n-1;
+	    
+	    int ans = -1;
+	    
+	    while(start <= end){
+	        int mid = start + (end - start)/2;
+	        
+	        if(arr[mid] == x){
+	            ans = mid; // Update answer with the current index
+	            
+                // If searching for the rightmost occurrence (if findRightOcc is true )
+                // move to the right half.
+	            // Otherwise, move to the left half.
+	            findRightOcc ? start = mid + 1 : end = mid - 1;
+	        }
+	        
+	        else if(arr[mid] < x)
+	            start = mid + 1;
+	        else
+	            end = mid - 1;
+	        
+	    }
+	    
+	    return ans;
+	}
+	int count(int arr[], int n, int x) {
+	    
+	    
+	    // right most occ index
+	    int rightOcc = findtOcc(arr, n, x, true);
+
+        // ***this is a corner case***
+        // if we are searching an element and if we get -1 as result
+        // it mean that element is not present in arr
+        // so we can return 0. if we don't return like this.
+        // so niche k line me ** int ans = rightOcc - leftOcc + 1; **
+        // jo code line hai uska output kuch aisa honga agar result me -1 aaya to
+        // int ans = (-1) - (-1) + 1 = 1
+        // right ya left OCc dono me se ek bhi -1 aya mean dono -1 hai. 
+	    if(rightOcc == -1) return 0;
+	    
+	    // right most occ index
+	    int leftOcc = findtOcc(arr, n, x, false);
+	    
+	    
+	    int ans = rightOcc - leftOcc + 1;
+	    return ans;
+	}
+};
