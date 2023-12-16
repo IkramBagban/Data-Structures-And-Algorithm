@@ -19,8 +19,10 @@ public:
         this->capacity = capacity;
     }
 
-    void insert(int val){
-        if(size == capacity){
+    void insert(int val)
+    {
+        if (size == capacity)
+        {
             cout << "Heap Overflow" << endl;
             return;
         }
@@ -29,23 +31,31 @@ public:
         int index = size;
         arr[index] = val;
 
-        while(index > 1){
-            int parentIndex = index/2;
-            if(arr[parentIndex] > arr[index]) {
+        while (index > 1)
+        {
+            int parentIndex = index / 2;
+            if (arr[parentIndex] > arr[index])
+            {
                 break;
-            }else{
+            }
+            else
+            {
                 swap(arr[parentIndex], arr[index]);
             }
-
-
         }
+    }
 
-
+    void printHeap(){
+        for(int i = 1; i <= size; i++){
+            cout << arr[i] << " " ;
+        }
+        cout << endl;
     }
 };
 
 int main()
 {
+   
 
     return 0;
 }
