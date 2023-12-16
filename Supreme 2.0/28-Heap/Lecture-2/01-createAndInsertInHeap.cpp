@@ -21,33 +21,43 @@ public:
 
     void insert(int val)
     {
+        // step 0 : check if heap is full
         if (size == capacity)
         {
             cout << "Heap Overflow" << endl;
             return;
         }
 
-        size++;
+        // step 1 : add the element at available position
+        size++; // starting insertion from 1st index
         int index = size;
         arr[index] = val;
 
+        // 1-based indexing hai. isliye array ko greater than 1 tak chala rahe.
         while (index > 1)
         {
             int parentIndex = index / 2;
-            if (arr[parentIndex] > arr[index])
+            // check if parent is greater than child.
+            if (arr[parentIndex] < arr[index])
             {
-                break;
+                // step 2 : if parent smaller then child than swap child with parent
+                swap(arr[parentIndex], arr[index]);
             }
             else
+            // step 3 : else break the loop
             {
-                swap(arr[parentIndex], arr[index]);
+                break;
             }
         }
     }
 
-    void printHeap(){
-        for(int i = 1; i <= size; i++){
-            cout << arr[i] << " " ;
+    void printHeap()
+    {
+        cout << "Printing Heap" << endl;
+        // since our array is 1-based indexing
+        for (int i = 1; i <= size; i++)
+        {
+            cout << arr[i] << " ";
         }
         cout << endl;
     }
@@ -55,7 +65,14 @@ public:
 
 int main()
 {
-   
+    Heap *h = new Heap(10);
+    h->insert(10);
+    h->insert(20);
+    h->insert(5);
+    h->insert(11);
+    h->insert(6);
+
+    h->printHeap();
 
     return 0;
 }
