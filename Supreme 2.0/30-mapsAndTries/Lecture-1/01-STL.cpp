@@ -29,8 +29,8 @@ int main() {
 
     // Iterating over the map
     cout << "Contents of the map:" << endl;
-    for (const auto& kv : mapping) {
-        cout << kv.first << " has value " << kv.second << endl;
+    for (auto p : mapping) {
+        cout << p.first << " has value " << p.second << endl;
     }
 
     // Erase elements
@@ -48,7 +48,6 @@ int main() {
     } else {
         cout << "'hello' not found in the map." << endl;
     }
-
 
     // Clear the map
     mapping.clear();
